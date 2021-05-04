@@ -15,8 +15,13 @@ ul{
 .mlr-5{
     margin: 0 5px;
 }
+
 .p-10{
     padding: 10px;
+}
+
+.gray{
+    color: gray;
 }
 
 .windows-background{
@@ -29,18 +34,18 @@ ul{
 
 .windows-background-up{
     width: 100vw;
-    height: 20vh;
+    height: 15vh;
     background-color:  rgb(30,190,165);
 }
 
 
 .big-container{
-    width: 80%;
+    width: 96%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 85vh;
+    height: 90vh;
     background-color: rgb(255, 255, 255);
     display: flex;
 }
@@ -55,15 +60,15 @@ ul{
     height: 100%;
 }
 
-.user-status{
-    height: 80px;
+.user-status, .contact-info{
+    height: 60px;
     background-color: rgb(237,237,237);
     display: flex;
 }
 
 img{
-    width: 60px;
-    margin: 10px;
+    width: 50px;
+    margin: 5px;
     border-radius: 50%;
 }
 
@@ -74,23 +79,24 @@ img{
 .user-status-icons{
     padding: 26px;
     align-items: center;
+    border-right: 2px solid rgb(187, 176, 176);
 }
 
 .alert{
-    height: 100px;
+    height: 80px;
     background-color: rgb(19, 237, 245);
     display: flex;
     align-items: center;
 }
 
 .notify{
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     border-radius: 50%;
     display: inline-block;
     background-color: white;
     margin-left: 15px;
-    padding: 9px;
+    padding: 4px;
 }
 
 .notify i {
@@ -105,14 +111,30 @@ img{
     justify-content: center;
 }
 
-.search-chat input{
+.search-chat > input{
     width: 80%;
     height: 60%;
     border-radius: 24px;
     border: none;
 }
-/* .fa-search{
-    position: absolute;
-    margin-left: 20px;
-} */
 
+.chat-box{
+    background-image: url("imgs/mine.jpg");
+    height: calc(100% - 60px - 60px);
+}
+
+.write-message{
+    height: 60px;
+    background-color:  rgb(237,237,237);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-message{
+
+    width: 80%;
+    height: 60%;
+    border-radius: 24px;
+    border: none;
+}
