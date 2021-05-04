@@ -5,8 +5,8 @@ const app = new Vue({
         activeUser = null
     },
     methods: {
-        onUserClick(onClickUser){
-            this.activeUser = clickedUser
+        selectContact(index){
+            this.contactUser = index;
         }
     },
     mounted(){

@@ -3,9 +3,13 @@
     padding: 0;
     margin: 0;
 }
-
+/* UTILITIES */
 ul{
     list-style-type: none;
+}
+
+.mlr-10{
+    margin: 0 10px;
 }
 
 .mlr-20{
@@ -24,6 +28,7 @@ ul{
     color: gray;
 }
 
+/* -------------- */
 .windows-background{
     width: 100vw;
     height: 100vh;
@@ -133,7 +138,7 @@ img{
 
 .text-message{
 
-    width: 80%;
+    width: 90%;
     height: 60%;
     border-radius: 24px;
     border: none;
