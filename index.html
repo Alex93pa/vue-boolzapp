@@ -31,7 +31,7 @@
                         <img src="imgs\avatar_1.jpg" alt="">
                     </div>
                     <div class="grow"></div>
-                    <div class="user-status-icons">
+                    <div class="user-status-icons flex">
                         <i class="fa fa-circle-o-notch  gray" aria-hidden="true"></i>
                         <i class="fa fa-comment  mlr-20 gray" aria-hidden="true"></i>
                         <i class="fa fa-ellipsis-v  gray" aria-hidden="true"></i>
@@ -56,11 +56,12 @@
                     <input type="text" placeholder=" Cerca o inizia una nuova chat" v-model="searchText" @input="onInput">
                 </div>
 
+            <!-- lista chat -->
                 <div class="chat-list">
                     <ul>
                         <li v-for="(item, index) in usersList" @click="selectContact(index); chatOpen() " :class=" {'selected' : index == activeUser }">
                             <div class="inline-b">
-                                <img :src="getAvatarPath(usersList.avatar)" alt="img">
+                                <img :src="getAvatarPath(item.avatar)" alt="img">
                             </div>
                             <div class="inline-b">
                                 <p class=""><strong>{{item.name}}</strong></p>
@@ -73,31 +74,36 @@
             </section>
 
     <!-- chat -->
-            <section class="chat-block">
 
-                <div class="contact-info">
+            <!-- barra di stato -->
+            <section class="chat-block ">
+
+                <div class="contact-info flex">
                     <div class="">
-                        <img :src="activeUser.avatar" alt="">
+                        <img :src="getAvatarPath(usersList[activeUser].avatar)" alt="">
                     </div>
-                    <div class="">
-                        <strong>{{ activeUser.name }}</strong>
-                        <p>Ultimo accesso alle {{ selectedUserLastAcces }}</p>
+                    <div class="contact-name">
+                        <strong>{{ usersList[activeUser].name }}</strong>
+                        <br>
+                        <p>Ultimo accesso alle {{ activeUserLastAcces }}</p>
                     </div>
                     <div class="grow"></div>
-                    <div class="user-status-icons">
+                    <div class="user-status-icons flex">
                         <i class="fa fa-search gray" aria-hidden="true"></i>
                         <i class="fa fa-paperclip mlr-20 gray" aria-hidden="true"></i>
                         <i class="fa fa-ellipsis-v  gray" aria-hidden="true"></i>
                     </div>
                 </div>
-
+        <!-- chat box -->
                 <div class="chat-box">
 
+                    
                 </div>
-
+            
+        <!-- invio messaggio -->
                 <div class="write-message">
                     <label for="">
-                        <i class="fa fa-smile-o mlr-10" aria-hidden="true"></i>
+                        <i class="fa fa-smile-o fa-2x mlr-10" aria-hidden="true"></i>
                     </label>
                     <input type="text" placeholder="  Scrivi un messaggio" class="text-message">
                     <label for="">

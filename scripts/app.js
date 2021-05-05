@@ -16,7 +16,7 @@ const app = new Vue({
             this.isChatOpen = true;
         },
         onUserClick(user) {
-            this.selectedUser = user
+            this.activeUser = user
         },
         onInput() {
 
@@ -27,14 +27,12 @@ const app = new Vue({
     },
 
     computed: {
-        selectedUserLastAccess() {
-            if (!this.selectedUser.messages) {
+        activeUserLastAccess() {
+            if (!this.activeUser.messages) {
                 return "";
             }
-
-            const receivedMsgs = this.selectedUser.messages.filter((msg) => msg.status === 'received');
+            const receivedMsgs = this.activeUser.messages.filter((msg) => msg.status === 'received');
             const lastMsgDate = receivedMsgs[receivedMsgs.lenght - 1].date;
-
             return this.formatTime(lastMsgDate);
         }
     }

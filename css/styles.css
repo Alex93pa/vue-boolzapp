@@ -31,6 +31,10 @@ ul{
 .inline-b{
     display: inline-block;
 }
+
+.flex{
+    display: flex;
+}
 /* -------------- */
 .windows-background{
     width: 100vw;
@@ -128,6 +132,12 @@ img{
 
 .selected{
     background-color: lightgray;
+}
+
+.contact-name{
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 .chat-box{
