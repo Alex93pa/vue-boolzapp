@@ -98,8 +98,8 @@
                 <div class="chat-box">
                     <div v-for="message in usersList[activeUser].messages" class="row-messages">
                         <div :class=" message.status === 'sent'? 'green' : 'white' " class="cloud-message">
-                            <p>{{formatTime(message.date)}}</p>
                             {{message.text}}
+                            <p class="hour-message">{{formatTime(message.date)}}</p>
                         </div>
                     </div>
                 </div>

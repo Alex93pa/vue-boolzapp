@@ -208,6 +208,12 @@ img{
     justify-content: center;
 }
 
+.hour-message{
+    font-size: 11px;
+    display: flex;
+    justify-content: flex-end;
+}
+
 .text-message{
 
     width: 90%;
