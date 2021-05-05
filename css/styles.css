@@ -28,6 +28,9 @@ ul{
     color: gray;
 }
 
+.inline-b{
+    display: inline-block;
+}
 /* -------------- */
 .windows-background{
     width: 100vw;
@@ -123,8 +126,12 @@ img{
     border: none;
 }
 
+.selected{
+    background-color: lightgray;
+}
+
 .chat-box{
-    background-image: url("imgs/mine.jpg");
+    background-image: url("../imgs/mine.jpg");
     height: calc(100% - 60px - 60px);
 }
 
