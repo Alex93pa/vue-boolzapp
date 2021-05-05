@@ -66,7 +66,58 @@ const globalUsersList = [
     },
     {
         name: 'Luisa',
-        avatar: '_4',
+        avatar: '_8',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+            }
+        ],
+    },
+    {
+        name: 'Luisa',
+        avatar: '_7',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+            }
+        ],
+    },
+    {
+        name: 'Luisa',
+        avatar: '_6',
+        visible: true,
+        messages: [
+            {
+                date: '10/01/2020 15:30:55',
+                text: 'Lo sai che ha aperto una nuova pizzeria?',
+                status: 'sent'
+            },
+            {
+                date: '10/01/2020 15:50:00',
+                text: 'Si, ma preferirei andare al cinema',
+                status: 'received'
+            }
+        ],
+    },
+    {
+        name: 'Luisa',
+        avatar: '_5',
         visible: true,
         messages: [
             {

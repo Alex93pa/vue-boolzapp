@@ -31,7 +31,7 @@ const app = new Vue({
             if (!this.activeUser.messages) {
                 return "";
             }
-            const receivedMsgs = this.activeUser.messages.filter((msg) => msg.status === 'received');
+            const receivedMsgs = this.activeUser.messages.filter(msg => msg.status === 'received');
             const lastMsgDate = receivedMsgs[receivedMsgs.lenght - 1].date;
             return this.formatTime(lastMsgDate);
         }

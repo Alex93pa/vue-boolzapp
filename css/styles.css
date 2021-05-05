@@ -130,19 +130,74 @@ img{
     border: none;
 }
 
+.chat-list{
+    cursor: pointer;
+
+}
+
 .selected{
     background-color: lightgray;
 }
 
 .contact-name{
-    display: flex;
-    justify-content: center;
-    align-items: center
+    padding: 10px;
 }
 
 .chat-box{
     background-image: url("../imgs/mine.jpg");
     height: calc(100% - 60px - 60px);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.row-messages{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.cloud-message{
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    width: 20%;
+    position: relative;
+    margin: 10px;
+}
+
+.green{
+    background-color: lightgreen;
+    align-self: flex-end;
+}
+
+.green::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 10px 0 10px;
+    border-color: lightgreen transparent transparent transparent;
+    position: absolute;
+    right: -10px;
+    top: 0;
+}
+
+.white{
+    background-color: white;
+    align-self: flex-start;
+}
+
+.white::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 10px 0px 10px;
+    border-color: white transparent transparent transparent;
+    position: absolute;
+    left: -10px;
+    top: 0;
 }
 
 .write-message{
