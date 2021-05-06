@@ -70,7 +70,6 @@ const app = new Vue({
         filderedUsersList() {
 
             return this.usersList.filter((element) => {
-                // return element.name.toLowerCase().includes(this.searchText.toLowerCase());
                 return element.name.toLowerCase().startsWith(this.searchText.toLowerCase());
 
             })

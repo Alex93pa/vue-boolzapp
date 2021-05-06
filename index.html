@@ -112,14 +112,13 @@
         <!-- invio messaggio -->
                 <div class="write-message">
                     <label for="">
-                        <i class="fa fa-smile-o fa-2x mlr-10" aria-hidden="true"></i>
+                        <i class="fa fa-smile-o fa-2x gray mlr-10" aria-hidden="true"></i>
                     </label>
                     <input type="text" placeholder="  Scrivi un messaggio" class="text-message" @keyup.enter="sendMessage" v-model="newMessageText">
                     <label for="">
-                        <!-- <i class="fa  mlr-10 gray" 
-                        :class="newMessageText= !null ? 'fa-microphone' : 'fa-paper-plane'"
-                        aria-hidden="true"></i> -->
-                        <i class="fa fa-paper-plane mlr-10 gray" aria-hidden="true"></i>
+                        
+                        <i  class="fa grey"
+                        :class="newMessageText === '' ? '  fa-microphone' : ' fa-paper-plane'" ></i>
                     </label>
                 </div>
             </section>
