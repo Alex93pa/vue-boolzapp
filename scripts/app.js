@@ -42,7 +42,7 @@ const app = new Vue({
                     date: moment().format("DD/MM/YYY HH:mm:ss"),
                     text: "Ok da " + this.activeUser.name,
                     status: 'received'
-                }
+                };
                 this.activeUser.messages.push(newRespMessage)
                 this.scrollToBottom()
             }, 1000);
@@ -52,7 +52,7 @@ const app = new Vue({
 
             htmlElement.scrollTop = htmlElement.scrollHeight
             }
-        }
+        
     },
 
     computed: {
