@@ -132,7 +132,7 @@ img{
 
 .chat-list{
     cursor: pointer;
-
+    overflow: auto;
 }
 
 .selected{

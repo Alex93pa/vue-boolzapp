@@ -51,15 +51,18 @@
 
                 <div class="search-chat">
                     <label class="">
-                        <i class="fa fa-search mlr-5" aria-hidden="true"></i>
+                        <i class="fa fa-search mlr-5" ></i>
                     </label>
-                    <input type="text" placeholder=" Cerca o inizia una nuova chat" v-model="searchText" @input="onInput">
+                    <input type="text" placeholder=" Cerca o inizia una nuova chat" v-model="searchText">
+                    <label class="">
+                        <i class="fa fa-times" v-if="searchText" @click="searchText = '' "></i>
+                    </label>
                 </div>
 
             <!-- lista chat -->
                 <div class="chat-list">
                     <ul>
-                        <li v-for="(item, index) in usersList" @click="selectContact(index); chatOpen() " :class=" {'selected' : index == activeUser }">
+                        <li v-for="(item, index) in filderedUsersList" @click="selectContact(index); chatOpen() " :class=" {'selected' : index == activeUser }">
                             <div class="inline-b">
                                 <img :src="getAvatarPath(item.avatar)" alt="img">
                             </div>
@@ -85,7 +88,7 @@
                     <div class="contact-name">
                         <strong>{{ usersList[activeUser].name }}</strong>
                         <br>
-                        <p>Ultimo accesso alle {{ activeUserLastAcces }}</p>
+                        <p v-if="activeUserLastAccess">Ultimo accesso alle {{ activeUserLastAccess }}</p>
                     </div>
                     <div class="grow"></div>
                     <div class="user-status-icons flex">
@@ -97,9 +100,11 @@
         <!-- chat box -->
                 <div class="chat-box">
                     <div v-for="message in usersList[activeUser].messages" class="row-messages">
-                        <div :class=" message.status === 'sent'? 'green' : 'white' " class="cloud-message">
+                        <div :class=" message.status === 'sent'? 'green' : 'white' " class="cloud-message" >
                             {{message.text}}
                             <p class="hour-message">{{formatTime(message.date)}}</p>
+
+                            <div v-if="message.showPopup"></div>
                         </div>
                     </div>
                 </div>
@@ -109,7 +114,7 @@
                     <label for="">
                         <i class="fa fa-smile-o fa-2x mlr-10" aria-hidden="true"></i>
                     </label>
-                    <input type="text" placeholder="  Scrivi un messaggio" class="text-message">
+                    <input type="text" placeholder="  Scrivi un messaggio" class="text-message" @keyup.enter="sendMessage" v-model="newMessageText">
                     <label for="">
                         <i class="fa fa-paper-plane mlr-10 gray" aria-hidden="true"></i>
                     </label>
