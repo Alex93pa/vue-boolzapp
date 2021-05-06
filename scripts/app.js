@@ -38,7 +38,7 @@ const app = new Vue({
             setTimeout(() => {
                 const newRespMessage = {
                     date: moment().format("DD/MM/YYY HH:mm:ss"),
-                    text: "Ok da " + this.usersList[activeUser].name,
+                    text: "Ok da " + this.usersList[this.activeUser].name,
                     status: 'received'
                 };
                 this.usersList[this.activeUser].messages.push(newRespMessage)
