@@ -132,6 +132,7 @@ img{
 
 .chat-list{
     cursor: pointer;
+    height: calc(100% - 180px);
     overflow: auto;
 }
 

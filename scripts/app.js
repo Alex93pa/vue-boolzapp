@@ -17,15 +17,13 @@ const app = new Vue({
         chatOpen(){
             this.isChatOpen = true;
         },
-        onUserClick(user) {
-            this.activeUser = user;
-        },
+        
         // onInput() {
         //     console.log("input");
         //     this.filteredData = this.usersList.filter
         // },
         formatTime(stringDate) {
-            return moment(stringDate, "DD/MM/YYYY HH:mm:ss").format("HH:mm:ss")
+            return moment(stringDate, "DD/MM/YYYY HH:mm:ss").format("HH:mm")
         },
         sendMessage() {
             const newMessage = {
@@ -33,17 +31,17 @@ const app = new Vue({
                 text: this.newMessageText,
                 status: 'sent'
             };
-            this.activeUser.messages.push(newMessage);
+            this.usersList[this.activeUser].messages.push(newMessage);
             this.newMessageText = "";
         
 
             setTimeout(() => {
                 const newRespMessage = {
                     date: moment().format("DD/MM/YYY HH:mm:ss"),
-                    text: "Ok da " + this.activeUser.name,
+                    text: "Ok da " + this.usersList[activeUser].name,
                     status: 'received'
                 };
-                this.activeUser.messages.push(newRespMessage)
+                this.usersList[this.activeUser].messages.push(newRespMessage)
                 this.scrollToBottom()
             }, 1000);
         },
@@ -51,19 +49,24 @@ const app = new Vue({
             const htmlElement = this.$refs.chatContainerToScroll
 
             htmlElement.scrollTop = htmlElement.scrollHeight
+            },
+             activeUserLastAccess() {
+            
+                if (this.usersList[this.activeUser].messages.length == 0) {
+                    return "";
+                }
+                
+                const receivedMsgs = this.usersList[this.activeUser].messages.filter((msg) => msg.status === 'received');
+                
+                const lastMsgDate = receivedMsgs[receivedMsgs.length - 1].date;
+                
+                return this.formatTime(lastMsgDate);
             }
         
     },
 
     computed: {
-        activeUserLastAccess() {
-            if (!this.activeUser.messages) {
-                return "";
-            }
-            const receivedMsgs = this.activeUser.messages.filter(msg => msg.status === 'received');
-            const lastMsgDate = receivedMsgs[receivedMsgs.lenght - 1].date;
-            return this.formatTime(lastMsgDate);
-        },
+       
         filderedUsersList() {
 
             return this.usersList.filter((element) => {

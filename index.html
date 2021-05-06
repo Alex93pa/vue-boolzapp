@@ -88,7 +88,7 @@
                     <div class="contact-name">
                         <strong>{{ usersList[activeUser].name }}</strong>
                         <br>
-                        <p v-if="activeUserLastAccess">Ultimo accesso alle {{ activeUserLastAccess }}</p>
+                        <p>Ultimo accesso alle {{ activeUserLastAccess() }}</p>
                     </div>
                     <div class="grow"></div>
                     <div class="user-status-icons flex">
@@ -116,6 +116,9 @@
                     </label>
                     <input type="text" placeholder="  Scrivi un messaggio" class="text-message" @keyup.enter="sendMessage" v-model="newMessageText">
                     <label for="">
+                        <!-- <i class="fa  mlr-10 gray" 
+                        :class="newMessageText= !null ? 'fa-microphone' : 'fa-paper-plane'"
+                        aria-hidden="true"></i> -->
                         <i class="fa fa-paper-plane mlr-10 gray" aria-hidden="true"></i>
                     </label>
                 </div>
