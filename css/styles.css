@@ -201,6 +201,42 @@ img{
     top: 0;
 }
 
+.popup{
+    position: absolute;
+    width: 180px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.424);
+    background-color: white;
+    overflow: hidden;
+    top: 19px;
+}
+
+.green .popup{
+    right: 11px;
+}
+
+.white .popup{
+    left: 160px;
+}
+
+.popup ul {
+    margin: 0;
+    list-style: none;
+}
+
+.popup ul li {
+    padding: 10px 15px;
+}
+
+.popup ul li:hover{
+    background-color: rgb(233, 231, 231);
+}
+
+.popup-activator{
+    position: absolute;
+    top: 0;
+    right: 7px;
+}
 .write-message{
     height: 60px;
     background-color:  rgb(237,237,237);

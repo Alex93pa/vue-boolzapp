@@ -18,10 +18,6 @@ const app = new Vue({
             this.isChatOpen = true;
         },
         
-        // onInput() {
-        //     console.log("input");
-        //     this.filteredData = this.usersList.filter
-        // },
         formatTime(stringDate) {
             return moment(stringDate, "DD/MM/YYYY HH:mm:ss").format("HH:mm")
         },
@@ -49,18 +45,24 @@ const app = new Vue({
             const htmlElement = this.$refs.chatContainerToScroll
 
             htmlElement.scrollTop = htmlElement.scrollHeight
-            },
-             activeUserLastAccess() {
+        },
+        onMsgClick(message) {
+            this.$set(message, "showPopup", true);
+        },
+        onMouseOut(message) {
+            this.$set(message, "showPopup", false);
+        },
+        activeUserLastAccess() {
+        
+            if (this.usersList[this.activeUser].messages.length == 0) {
+                return "";
+            }
             
-                if (this.usersList[this.activeUser].messages.length == 0) {
-                    return "";
-                }
-                
-                const receivedMsgs = this.usersList[this.activeUser].messages.filter((msg) => msg.status === 'received');
-                
-                const lastMsgDate = receivedMsgs[receivedMsgs.length - 1].date;
-                
-                return this.formatTime(lastMsgDate);
+            const receivedMsgs = this.usersList[this.activeUser].messages.filter((msg) => msg.status === 'received');
+            
+            const lastMsgDate = receivedMsgs[receivedMsgs.length - 1].date;
+            
+            return this.formatTime(lastMsgDate);
             }
         
     },

@@ -100,11 +100,18 @@
         <!-- chat box -->
                 <div class="chat-box">
                     <div v-for="message in usersList[activeUser].messages" class="row-messages">
-                        <div :class=" message.status === 'sent'? 'green' : 'white' " class="cloud-message" >
+                        <div :class=" message.status === 'sent'? 'green' : 'white' " class="cloud-message" @click="onMsgClick(message)" @mouseout="onMouseOut(message)">
                             {{message.text}}
                             <p class="hour-message">{{formatTime(message.date)}}</p>
 
-                            <div v-if="message.showPopup"></div>
+                            <i class="fa fa-chevron-down popup-activator gray" ></i>
+
+                            <div class="popup" v-if="message.showPopup">
+                                <ul>
+                                    <li>Info Messaggio</li>
+                                    <li>Cancella Messaggio</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
