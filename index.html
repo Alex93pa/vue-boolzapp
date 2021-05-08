@@ -32,9 +32,9 @@
                     </div>
                     <div class="grow"></div>
                     <div class="user-status-icons flex">
-                        <i class="fa fa-circle-o-notch  gray" aria-hidden="true"></i>
-                        <i class="fa fa-comment  mlr-20 gray" aria-hidden="true"></i>
-                        <i class="fa fa-ellipsis-v  gray" aria-hidden="true"></i>
+                        <i class="fa fa-circle-o-notch  fa-lg gray" aria-hidden="true"></i>
+                        <i class="fa fa-comment  mlr-20 fa-lg gray" aria-hidden="true"></i>
+                        <i class="fa fa-ellipsis-v  fa-lg gray" aria-hidden="true"></i>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
 
                 <div class="search-chat">
                     <label class="">
-                        <i class="fa fa-search mlr-5" ></i>
+                        <i class="fa fa-search gray mlr-5" ></i>
                     </label>
                     <input type="text" placeholder=" Cerca o inizia una nuova chat" v-model="searchText">
                     <label class="">
@@ -92,9 +92,9 @@
                     </div>
                     <div class="grow"></div>
                     <div class="user-status-icons flex">
-                        <i class="fa fa-search gray" aria-hidden="true"></i>
-                        <i class="fa fa-paperclip mlr-20 gray" aria-hidden="true"></i>
-                        <i class="fa fa-ellipsis-v  gray" aria-hidden="true"></i>
+                        <i class="fa fa-search gray fa-lg" aria-hidden="true"></i>
+                        <i class="fa fa-paperclip mlr-20 gray fa-lg" aria-hidden="true"></i>
+                        <i class="fa fa-ellipsis-v  gray fa-lg" aria-hidden="true"></i>
                     </div>
                 </div>
         <!-- chat box -->
@@ -122,12 +122,12 @@
         <!-- invio messaggio -->
                 <div class="write-message">
                     <label for="">
-                        <i class="fa fa-smile-o fa-2x gray mlr-10" aria-hidden="true"></i>
+                        <i class="fa fa-smile-o fa-lg gray mlr-10" aria-hidden="true"></i>
                     </label>
                     <input type="text" placeholder="  Scrivi un messaggio" class="text-message" @keyup.enter="sendMessage" v-model="newMessageText">
                     <label for="">
                         
-                        <i  class="fa grey mlr-10"
+                        <i  class="fa gray fa-lg mlr-10"
                         :class="newMessageText === '' ? '  fa-microphone' : ' fa-paper-plane'" ></i>
                     </label>
                 </div>
