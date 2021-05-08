@@ -65,7 +65,7 @@ const globalUsersList = [
         ],
     },
     {
-        name: 'Luisa',
+        name: 'Luigi',
         avatar: '_8',
         visible: true,
         messages: [
