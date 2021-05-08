@@ -46,11 +46,32 @@ const app = new Vue({
 
             htmlElement.scrollTop = htmlElement.scrollHeight
         },
-        onMsgClick(message) {
+        onMsgClick(message, event) {
             this.$set(message, "showPopup", true);
+
+            event.currentTarget.focus();
         },
-        onMouseOut(message) {
+        onFocusLost(message) {
             this.$set(message, "showPopup", false);
+        },
+        onPopupClick(message){
+            message.showPopup = false;
+        },
+        onDeleteClick(msgIndex) {
+            this.usersList[this.activeUser].messages.splice(msgIndex, 1)
+        },
+        getLastMsg(messages) {
+            if (messages.length === 0 ) {
+                return ""
+            }
+            const lastMsg = messages[messages.length - 1 ];
+            let trimmedMsg = lastMsg.text.slice(0, 20)
+            const formattedDate = this.formatTime(lastMsg.date)
+
+            if(lastMsg.text.length > 20) {
+                trimmedMsg += "...";
+            }
+            return trimmedMsg + " - " + formattedDate
         },
         activeUserLastAccess() {
         

@@ -167,6 +167,11 @@ img{
     margin: 10px;
 }
 
+.cloud-message:hover i{
+    display: block;
+    opacity: 0.7;
+}
+
 .green{
     background-color: lightgreen;
     align-self: flex-end;
@@ -209,6 +214,7 @@ img{
     background-color: white;
     overflow: hidden;
     top: 19px;
+
 }
 
 .green .popup{
@@ -236,6 +242,7 @@ img{
     position: absolute;
     top: 0;
     right: 7px;
+    display: none;
 }
 .write-message{
     height: 60px;

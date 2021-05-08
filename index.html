@@ -68,7 +68,7 @@
                             </div>
                             <div class="inline-b">
                                 <p class=""><strong>{{item.name}}</strong></p>
-                                <p>Non ci sono messaggi</p>
+                                <p>{{ getLastMsg(user.messages) }}</p>
                             </div>
                         </li>
                     </ul>
@@ -100,16 +100,19 @@
         <!-- chat box -->
                 <div class="chat-box">
                     <div v-for="message in usersList[activeUser].messages" class="row-messages">
-                        <div :class=" message.status === 'sent'? 'green' : 'white' " class="cloud-message" @click="onMsgClick(message)" @mouseout="onMouseOut(message)">
+                        <div :class=" message.status === 'sent'? 'green' : 'white' " class="cloud-message"
+                        tabindex="-1" 
+                        @click="onMsgClick(message, $event)"
+                        @blur="onFocusLost(message)">
                             {{message.text}}
                             <p class="hour-message">{{formatTime(message.date)}}</p>
 
                             <i class="fa fa-chevron-down popup-activator gray" ></i>
 
-                            <div class="popup" v-if="message.showPopup">
+                            <div class="popup" v-if="message.showPopup" @click.stop="onPopupClick(message)">
                                 <ul>
-                                    <li>Info Messaggio</li>
-                                    <li>Cancella Messaggio</li>
+                                    <li >Info Messaggio</li>
+                                    <li @click="onDeleteClick(index)">Cancella Messaggio</li>
                                 </ul>
                             </div>
                         </div>
