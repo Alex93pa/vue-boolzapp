@@ -68,7 +68,7 @@
                             </div>
                             <div class="inline-b">
                                 <p class=""><strong>{{item.name}}</strong></p>
-                                <p>{{ getLastMsg(user.messages) }}</p>
+                                <p>{{ getLastMsg(item.messages) }}</p>
                             </div>
                         </li>
                     </ul>
@@ -127,7 +127,7 @@
                     <input type="text" placeholder="  Scrivi un messaggio" class="text-message" @keyup.enter="sendMessage" v-model="newMessageText">
                     <label for="">
                         
-                        <i  class="fa grey"
+                        <i  class="fa grey mlr-10"
                         :class="newMessageText === '' ? '  fa-microphone' : ' fa-paper-plane'" ></i>
                     </label>
                 </div>

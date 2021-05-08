@@ -1,7 +1,7 @@
 const globalUsersList = [
     {
-        name: 'Michele',
-        avatar: '_1',
+        name: 'Materazzi',
+        avatar: '_4',
         visible: true,
         messages: [
             {
@@ -22,44 +22,44 @@ const globalUsersList = [
         ],
     },
     {
-        name: 'Fabio',
+        name: 'Totti',
         avatar: '_2',
         visible: true,
         messages: [
             {
                 date: '20/03/2020 16:30:00',
-                text: 'Ciao come stai?',
+                text: 'Ciao Francè che fai?',
                 status: 'sent'
             },
             {
                 date: '20/03/2020 16:30:55',
-                text: 'Bene grazie! Stasera ci vediamo?',
+                text: 'Mò je faccio er cucchiaio',
                 status: 'received'
             },
             {
                 date: '20/03/2020 16:35:00',
-                text: 'Mi piacerebbe ma devo andare a fare la spesa.',
+                text: 'Daje',
                 status: 'sent'
             }
         ],
     }, {
-        name: 'Samuele',
+        name: 'Buffon',
         avatar: '_3',
         visible: true,
         messages: [
             {
                 date: '28/03/2020 10:10:40',
-                text: 'La Marianna va in campagna',
+                text: 'Che ci giochiamo oggi?',
                 status: 'received'
             },
             {
                 date: '28/03/2020 10:20:10',
-                text: 'Sicuro di non aver sbagliato chat?',
+                text: 'Parma-Roma?',
                 status: 'sent'
             },
             {
                 date: '28/03/2020 16:15:22',
-                text: 'Ah scusa!',
+                text: 'X2 fisso',
                 status: 'received'
             }
         ],
@@ -82,7 +82,7 @@ const globalUsersList = [
         ],
     },
     {
-        name: 'Luisa',
+        name: 'Luca',
         avatar: '_7',
         visible: true,
         messages: [
@@ -99,8 +99,8 @@ const globalUsersList = [
         ],
     },
     {
-        name: 'Luisa',
-        avatar: '_6',
+        name: 'Salvatore',
+        avatar: '_20',
         visible: true,
         messages: [
             {

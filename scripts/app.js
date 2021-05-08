@@ -34,7 +34,7 @@ const app = new Vue({
             setTimeout(() => {
                 const newRespMessage = {
                     date: moment().format("DD/MM/YYY HH:mm:ss"),
-                    text: "Ok da " + this.usersList[this.activeUser].name,
+                    text: "Campioni del mondo! " + this.usersList[this.activeUser].name,
                     status: 'received'
                 };
                 this.usersList[this.activeUser].messages.push(newRespMessage)
@@ -62,7 +62,7 @@ const app = new Vue({
         },
         getLastMsg(messages) {
             if (messages.length === 0 ) {
-                return ""
+                return " chat vuota"
             }
             const lastMsg = messages[messages.length - 1 ];
             let trimmedMsg = lastMsg.text.slice(0, 20)
